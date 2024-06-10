@@ -1,5 +1,6 @@
-package com.spring.web_book_reservation;
+package com.spring.web_book_reservation.Config;
 
+import com.spring.web_book_reservation.WebBookReservationApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
