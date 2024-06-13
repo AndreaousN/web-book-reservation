@@ -15,9 +15,9 @@ public class User {
     @Column(name = "email")
     private String email;
     @Column(name = "password")
-    private int password;
+    private String password;
     @Transient
-    private int confirmPassword;
+    private String confirmPassword;
     @Column(name = "role")
     private String role;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -26,7 +26,7 @@ public class User {
     public User() {
     }
 
-    public User(String username, String email, int password, int confirmPassword, String role) {
+    public User(String username, String email, String password, String confirmPassword, String role) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -34,7 +34,7 @@ public class User {
         this.role = role;
     }
 
-    public User(int id, String username, String email, int password, int confirmPassword, String role) {
+    public User(int id, String username, String email, String password, String confirmPassword, String role) {
         this.id = id;
         this.username = username;
         this.email = email;
@@ -67,19 +67,19 @@ public class User {
         this.email = email;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public int getConfirmPassword() {
+    public String getConfirmPassword() {
         return confirmPassword;
     }
 
-    public void setConfirmPassword(int confirmPassword) {
+    public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
 
