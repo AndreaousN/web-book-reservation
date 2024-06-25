@@ -5,14 +5,16 @@ import com.spring.web_book_reservation.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final UserRepository userRepository;
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository,
-                           @Qualifier("BCryptPassword") BCryptPasswordEncoder bCryptPasswordEncoder) {
+                           @Qualifier("BCryptPasswordEncoder") BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }

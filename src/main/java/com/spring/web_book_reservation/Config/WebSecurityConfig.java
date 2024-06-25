@@ -55,7 +55,7 @@ public class WebSecurityConfig {
                 auth -> auth.requestMatchers("/register").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(login -> login.loginPage("/login")
-                        .loginProcessingUrl("/loginUser")
+                        .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/book")
                         .failureUrl("/login")
                         .permitAll())
