@@ -52,11 +52,11 @@ public class WebSecurityConfig {
                 auth -> auth.requestMatchers("/templates/**", "/images/**", "/css/**").permitAll());
 
         http.authorizeHttpRequests(
-                auth -> auth.requestMatchers("/register").permitAll()
+                auth -> auth.requestMatchers("/register", "/registerUser").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(login -> login.loginPage("/login")
-                        .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/book")
+                        .loginProcessingUrl("/loginUser")
+                        .defaultSuccessUrl("/bookstore")
                         .failureUrl("/login")
                         .permitAll())
                 .logout(logout -> logout.logoutUrl("/login").permitAll());

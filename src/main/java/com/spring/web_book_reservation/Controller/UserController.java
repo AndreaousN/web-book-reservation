@@ -39,9 +39,9 @@ public class UserController {
         return "login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/loginUser")
     public String loginUser(@ModelAttribute("user") User user) {
-        return "redirect:/bookStore";
+        return "redirect:/bookstore";
     }
 
     @GetMapping("/register")
@@ -52,8 +52,8 @@ public class UserController {
 
     @PostMapping("/registerUser")
     public String registerNewUser(@ModelAttribute("user") User user) {
-        logger.info("Registering user: " + user.getUsername());
         userService.createUser(user);
+        System.out.println(user.getPassword());
         return "redirect:/login";
     }
 }
